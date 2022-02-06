@@ -191,19 +191,19 @@ int main(int)
 		/*Área círculo*/
 		double pi, raio, area_circulo, diametro, perimetro_circulo;;
 		printf("Área do círculo\n");
-			printf("Defina seu valor de PI (Padrão do programa = 3.1416)\n");
+			printf("Defina seu valor de PI (Padrão do programa = 3,1416)\n");
 			scanf_s("%lf", &pi);
 			printf("Digite o raio do seu círculo\n");
 			scanf_s("%lf", &raio);
 			area_circulo = (raio * (pow(pi, 2)));
 			perimetro_circulo = (2 * pi) * raio;
 			diametro = (2 * raio);
-			printf("Área = %.4f", area_circulo);
-			printf("Perímetro = %.4f", perimetro_circulo);
+			printf("Área = %.4f\n", area_circulo);
+			printf("Perímetro = %.4f\n", perimetro_circulo);
 			/*passo a passo*/
-			printf("Área = %.4f * %f^2", pi, raio);
-			printf("Perímetro = (2 * %.4f) * %f", pi, raio);
-			printf("Diâmetro = %f * 2", raio);
+			printf("Área = %.4f * %f^2\n", pi, raio);
+			printf("Perímetro = (2 * %.4f) * %f\n", pi, raio);
+			printf("Diâmetro = %f * 2\n", raio);
 			system("Pause");
 			return 0;
 	}
