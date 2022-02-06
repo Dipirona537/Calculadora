@@ -8,6 +8,7 @@ int main(int)
 {
 	setlocale(LC_ALL, "Portuguese");
 	{
+		selecionar_programa:
 		/*Escolha de formula*/
 		int escolha;
 		printf("Programa para resolução de diversos problemas matemáticos\n");
@@ -16,7 +17,7 @@ int main(int)
 		Sleep(500);
 		printf("-----\n");
 		printf("Escolha o tipo de problema que deseja resolver:\n");
-		printf("1 - Bhaskara\n2 - Área Triângulo\n3 - Área Quadrado\n4 - Área Círculo\n5 - Área Cone\n6 - Área Trapézio\n99 - Créditos\n");
+		printf("1 - Bhaskara\n2 - Área Triângulo\n3 - Área Quadrado\n4 - Área Círculo\n5 - Área Cone\n6 - Área Trapézio\n99 - Créditos\n100 - Sair do programa\n");
 		printf("-----\n");
 		scanf_s("%d", &escolha);
 		switch (escolha)
@@ -35,6 +36,8 @@ int main(int)
 			goto bhaskara;
 		case 99:
 			goto creditos;
+		case 100:
+			goto fechar;
 		}
 
 		/*bhaskara*/
@@ -75,7 +78,7 @@ int main(int)
 			printf("X2 = -(%d) - (%.2f) / (2 * %d)\n", b, raiz, a);
 			printf("\n");
 			system("Pause");
-			return 0;
+			goto selecionar_programa;
 		}
 	}
 	{
@@ -116,7 +119,7 @@ int main(int)
 		/*passo a passo area_tri_3*/
 		printf("Área = %.2d*%.2d / 2\n", b_tri_1, h_tri_1);
 		system("Pause");
-		return 0;
+		goto selecionar_programa;
 	}
 	{
 	triangulo2: 
@@ -134,7 +137,7 @@ int main(int)
 		/*passo a passo area_tri_3*/
 		printf("Área = %.2d*%.2d / 2\n", b, h);
 		system("Pause");
-		return 0;
+		goto selecionar_programa;
 	}
 	{
 	triangulo3: 
@@ -152,7 +155,7 @@ int main(int)
 		/*passo a passo area_tri_3*/
 		printf("Área = %.2d*%.2d / 2\n", b_tri_2, h_tri_2);
 		system("Pause");
-		return 0;
+		goto selecionar_programa;
 	}
 	{
 	triangulo4:
@@ -170,7 +173,7 @@ int main(int)
 		/*passo a passo area_tri_3*/
 		printf("Área = %.2d*%.2d / 2\n", b_tri_3, h_tri_3);
 		system("Pause");
-		return 0;
+		goto selecionar_programa;
 	}
 	{
 	quadrado:
@@ -184,7 +187,7 @@ int main(int)
 		/*passo a passo*/
 		printf("Área = %d * %d\n", area_quadrado, area_quadrado);
 		system("Pause");
-		return 0;
+		goto selecionar_programa;
 	}
 	{
 	circulo:
@@ -205,17 +208,54 @@ int main(int)
 			printf("Perímetro = (2 * %.4f) * %f\n", pi, raio);
 			printf("Diâmetro = %f * 2\n", raio);
 			system("Pause");
-			return 0;
+			goto selecionar_programa;
 	}
 	{
 	area_cone:
-		printf("Área cone teste");
+		/*area cone*/
+		double geratriz, geratriz_comeco, raio_cone, altura_cone, area_cone_total, area_cone_total_1, area_cone_base, area_cone_lateral, pi_cone, volume_cone;
+		printf("Área do Cone\n");
+		printf("Digite o valor de pi que deseja usar (Padrão 3,1416)\n");
+		scanf_s("%lf", &pi_cone);
+		printf("Digite o raio do cone\n");
+		scanf_s("%lf", &raio_cone);
+		printf("Digite a altura do cone\n");
+		scanf_s("%lf", &altura_cone);
+		/*Calculos*/
+		geratriz_comeco = ((pow(raio_cone, 2)) + (pow(altura_cone, 2)));
+		geratriz = sqrt(geratriz_comeco);
+		area_cone_base = (pi_cone * (pow(raio_cone, 2)));
+		area_cone_lateral = ((pi_cone * raio_cone) * (geratriz));
+		area_cone_total_1 = (raio_cone+geratriz);
+		area_cone_total = ((pi_cone) * ((raio_cone * area_cone_total_1)));
+		volume_cone = (((pi_cone * (pow(raio_cone, 2))) * altura_cone) / (3));
+		printf("Área total = %.4fm^2\n", area_cone_total);
+		printf("Área da base = %.4fm^2\n", area_cone_base);
+		printf("Área da lateral = %.4fm^2\n", area_cone_lateral);
+		printf("Volume = %.4fm^3\n", volume_cone);
+		printf("Geratriz = %.4f\n", geratriz);
+		/*passo a passo*/
+		printf("\n");
+		printf("-----\n");
+		printf("Geratriz^2 = %.4f^2 + %.4f^2\n", raio_cone, altura_cone);
+		printf("Geratriz = sqrt(%.4f)\n", geratriz_comeco);
+		printf("Área Total = %.4f * %.4f * (%.4f + %.4f)\n", pi_cone, raio_cone, raio_cone, geratriz);
+		printf("Área total = %.4f\n", area_cone_total);
+		printf("-----\n");
 		system("Pause");
-		return 0;
+		goto selecionar_programa;
 	}
 	
 	
 	
+	
+	
+	{
+	fechar:
+		printf("Obrigado por usar o programa, espero que tenha te ajudado!");
+		Sleep(1000);
+		return 0;
+	}
 	{
 		{
 		creditos:
@@ -223,7 +263,7 @@ int main(int)
 			Sleep(1000);
 			printf("Dipirona537 - Gabriel Guimarães\n");
 			system("Pause");
-			return 0;
+			goto selecionar_programa;
 		}
 	}
 }
