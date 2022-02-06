@@ -30,7 +30,7 @@ int main(int)
 		case 4:
 			goto circulo;
 		case 5:
-			goto bhaskara;
+			goto area_cone;
 		case 6:
 			goto bhaskara;
 		case 99:
@@ -207,7 +207,12 @@ int main(int)
 			system("Pause");
 			return 0;
 	}
-	
+	{
+	area_cone:
+		printf("Área cone teste");
+		system("Pause");
+		return 0;
+	}
 	
 	
 	
