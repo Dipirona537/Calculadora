@@ -209,7 +209,7 @@ int main(int)
 	}
 	{
 	area_cone:
-		printf("Área cone");
+		printf("Área cone teste");
 		system("Pause");
 		return 0;
 	}
