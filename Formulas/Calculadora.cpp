@@ -130,20 +130,17 @@ int main(int)
 		}
 		{
 		triangulo4:
-			printf("funcionando");
+			printf("funcionando3");
+			printf("funcionand3");
 			return 0;
 		}
 		{
 		triangulo5:
-			printf("funcionando");
+			printf("funcionando2");
 			return 0;
 		}
 		return 0;
 	}
-
-
-
-
 
 
 
