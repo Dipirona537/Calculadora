@@ -136,7 +136,7 @@ int main(int)
 		}
 		{
 		triangulo5:
-			printf("funcionando2");
+			printf("funcionando4");
 			return 0;
 		}
 		return 0;
