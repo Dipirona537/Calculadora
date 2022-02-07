@@ -13,7 +13,7 @@ int main(int)
 		int escolha;
 		printf("Programa para resolução de diversos problemas matemáticos\n");
 		printf("Utilize valores padrão do SI (metro, grama, segundo, kelvin, ampère, etc...)\n");
-		printf("Caso o programa der certo adicionaremos mais fórmulas conforme o tempo passa.\n");
+		//printf("Caso o programa der certo adicionaremos mais fórmulas conforme o tempo passa.\n");
 		Sleep(500);
 		printf("-----\n");
 		printf("Escolha o tipo de problema que deseja resolver:\n");
@@ -33,7 +33,7 @@ int main(int)
 		case 5:
 			goto area_cone;
 		case 6:
-			goto bhaskara;
+			goto trapezio;
 		case 99:
 			goto creditos;
 		case 100:
@@ -183,7 +183,7 @@ int main(int)
 		printf("Digite o valor do lado do quadrado\n");
 		scanf_s("%d", &lado_quadrado);
 		area_quadrado = (lado_quadrado * lado_quadrado);
-			printf("A área é = %.2d\n", area_quadrado);
+			printf("A área é = %.2dm^2\n", area_quadrado);
 		/*passo a passo*/
 		printf("Área = %d * %d\n", area_quadrado, area_quadrado);
 		system("Pause");
@@ -201,12 +201,12 @@ int main(int)
 			area_circulo = (raio * (pow(pi, 2)));
 			perimetro_circulo = (2 * pi) * raio;
 			diametro = (2 * raio);
-			printf("Área = %.4f\n", area_circulo);
-			printf("Perímetro = %.4f\n", perimetro_circulo);
+			printf("Área = %.4fm^2\n", area_circulo);
+			printf("Perímetro = %.4fm\n", perimetro_circulo);
 			/*passo a passo*/
-			printf("Área = %.4f * %f^2\n", pi, raio);
-			printf("Perímetro = (2 * %.4f) * %f\n", pi, raio);
-			printf("Diâmetro = %f * 2\n", raio);
+			printf("Área = %.4f * %fm^2\n", pi, raio);
+			printf("Perímetro = (2 * %.4fm) * %f\n", pi, raio);
+			printf("Diâmetro = %.fm\n", diametro);
 			system("Pause");
 			goto selecionar_programa;
 	}
@@ -245,7 +245,26 @@ int main(int)
 		system("Pause");
 		goto selecionar_programa;
 	}
-	
+	{
+	trapezio:
+		/*Trapezio*/
+		int base_menor, base_maior, altura_trapezio, area_trapezio_1, area_trapezio;
+		printf("Área do Trapézio\n");
+		printf("Digite o valor da base maior\n");
+		scanf_s("%d", &base_maior);
+		printf("Digite o valor da base menor\n");
+		scanf_s("%d", &base_menor);
+		printf("Digite o valor da altura\n");
+		scanf_s("%d", &altura_trapezio);
+		area_trapezio_1 = (((base_maior * base_menor)) * (altura_trapezio));
+		area_trapezio = (area_trapezio_1 / 2);
+		printf("Área = %dm^2\n", area_trapezio);
+		/*passo a passo*/
+		printf("Área = ((%d * %d) * %d) / 2\n", base_maior, base_menor, altura_trapezio);
+		printf("Área = %d / 2\n", area_trapezio_1);
+		system("Pause");
+		goto selecionar_programa;
+	}
 	
 	
 	
