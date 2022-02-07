@@ -8,7 +8,7 @@ int main(int)
 {
 	setlocale(LC_ALL, "Portuguese");
 	{
-		selecionar_programa:
+	selecionar_programa:
 		/*Escolha de formula*/
 		int escolha;
 		printf("Programa para resolução de diversos problemas matemáticos\n");
@@ -104,7 +104,7 @@ int main(int)
 		}
 	}
 	{
-	triangulo1: 
+	triangulo1:
 		/*Area triangulo retangulo*/
 		int area_tri_1, h_tri_1, b_tri_1;
 		printf("Triângulo Retângulo\n");
@@ -122,7 +122,7 @@ int main(int)
 		goto selecionar_programa;
 	}
 	{
-	triangulo2: 
+	triangulo2:
 		/*Area triângulo equilátero*/
 		int b, h, area_tri_3;
 		printf("Triângulo Equilátero\n");
@@ -140,7 +140,7 @@ int main(int)
 		goto selecionar_programa;
 	}
 	{
-	triangulo3: 
+	triangulo3:
 		/*Area triângulo isósceles*/
 		int b_tri_2, h_tri_2, area_tri_2;
 		printf("Triângulo Isósceles\n");
@@ -183,7 +183,7 @@ int main(int)
 		printf("Digite o valor do lado do quadrado\n");
 		scanf_s("%d", &lado_quadrado);
 		area_quadrado = (lado_quadrado * lado_quadrado);
-			printf("A área é = %.2dm^2\n", area_quadrado);
+		printf("A área é = %.2dm^2\n", area_quadrado);
 		/*passo a passo*/
 		printf("Área = %d * %d\n", area_quadrado, area_quadrado);
 		system("Pause");
@@ -194,21 +194,21 @@ int main(int)
 		/*Área círculo*/
 		double pi, raio, area_circulo, diametro, perimetro_circulo;;
 		printf("Área do círculo\n");
-			printf("Defina seu valor de PI (Padrão do programa = 3,1416)\n");
-			scanf_s("%lf", &pi);
-			printf("Digite o raio do seu círculo\n");
-			scanf_s("%lf", &raio);
-			area_circulo = (raio * (pow(pi, 2)));
-			perimetro_circulo = (2 * pi) * raio;
-			diametro = (2 * raio);
-			printf("Área = %.4fm^2\n", area_circulo);
-			printf("Perímetro = %.4fm\n", perimetro_circulo);
-			/*passo a passo*/
-			printf("Área = %.4f * %fm^2\n", pi, raio);
-			printf("Perímetro = (2 * %.4fm) * %f\n", pi, raio);
-			printf("Diâmetro = %.fm\n", diametro);
-			system("Pause");
-			goto selecionar_programa;
+		printf("Defina seu valor de PI (Padrão do programa = 3,1416)\n");
+		scanf_s("%lf", &pi);
+		printf("Digite o raio do seu círculo\n");
+		scanf_s("%lf", &raio);
+		area_circulo = (raio * (pow(pi, 2)));
+		perimetro_circulo = (2 * pi) * raio;
+		diametro = (2 * raio);
+		printf("Área = %.4fm^2\n", area_circulo);
+		printf("Perímetro = %.4fm\n", perimetro_circulo);
+		/*passo a passo*/
+		printf("Área = %.4f * %fm^2\n", pi, raio);
+		printf("Perímetro = (2 * %.4fm) * %f\n", pi, raio);
+		printf("Diâmetro = %.fm\n", diametro);
+		system("Pause");
+		goto selecionar_programa;
 	}
 	{
 	area_cone:
@@ -226,7 +226,7 @@ int main(int)
 		geratriz = sqrt(geratriz_comeco);
 		area_cone_base = (pi_cone * (pow(raio_cone, 2)));
 		area_cone_lateral = ((pi_cone * raio_cone) * (geratriz));
-		area_cone_total_1 = (raio_cone+geratriz);
+		area_cone_total_1 = (raio_cone + geratriz);
 		area_cone_total = ((pi_cone) * ((raio_cone * area_cone_total_1)));
 		volume_cone = (((pi_cone * (pow(raio_cone, 2))) * altura_cone) / (3));
 		printf("Área total = %.4fm^2\n", area_cone_total);
@@ -265,10 +265,10 @@ int main(int)
 		system("Pause");
 		goto selecionar_programa;
 	}
-	
-	
-	
-	
+
+
+
+
 	{
 	fechar:
 		printf("Obrigado por usar o programa, espero que tenha te ajudado!");
