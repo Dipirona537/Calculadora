@@ -17,7 +17,7 @@ int main(int)
 		Sleep(500);
 		printf("-----\n");
 		printf("Escolha o tipo de problema que deseja resolver:\n");
-		printf("1 - Bhaskara\n2 - Área Triângulo\n3 - Área Quadrado\n4 - Área Círculo\n5 - Área Cone\n6 - Área Trapézio\n99 - Créditos\n100 - Sair do programa\n");
+		printf("1 - Bhaskara\n2 - Área Triângulo\n3 - Área Quadrado\n4 - Área Círculo\n5 - Área Cone\n6 - Área Trapézio\n7 - Conversão Binário e Hex\n99 - Créditos\n100 - Sair do programa\n");
 		printf("-----\n");
 		scanf_s("%d", &escolha);
 		switch (escolha)
@@ -34,6 +34,8 @@ int main(int)
 			goto area_cone;
 		case 6:
 			goto trapezio;
+		case 7:
+			goto conversor;
 		case 99:
 			goto creditos;
 		case 100:
@@ -221,7 +223,10 @@ int main(int)
 		scanf_s("%lf", &raio_cone);
 		printf("Digite a altura do cone\n");
 		scanf_s("%lf", &altura_cone);
-		/*Calculos*/
+		printf("\n");
+			/*Calculos*/
+		printf("Passo a Passo\n");
+		printf("\n");
 		geratriz_comeco = ((pow(raio_cone, 2)) + (pow(altura_cone, 2)));
 		geratriz = sqrt(geratriz_comeco);
 		area_cone_base = (pi_cone * (pow(raio_cone, 2)));
@@ -265,13 +270,50 @@ int main(int)
 		system("Pause");
 		goto selecionar_programa;
 	}
+	{
+	conversor:
+		int escolha_conversor;
+		printf("Conversor binário e Hex\n");
+		printf("1 - Decimal para Binário e Hex\n2 - Binário para decimal e Hex\n3 - Hex para binário e decimal\n");
+		scanf_s("%d", &escolha_conversor);
+		switch (escolha_conversor)
+		{
+		case 1:
+			goto decimal_binario;
+		case 2:
+			goto binario_decimal;
+		case 3:
+			goto hex_decimal;
+		}
+	{
+	decimal_binario:
+		printf("decimal p binario\n");
+		system("Pause");
+		goto selecionar_programa;
+	}
 
+
+
+	}
+	{
+	binario_decimal:
+		printf("binario p decimal\n");
+		system("Pause");
+		goto selecionar_programa;
+	}
+	{
+	hex_decimal:
+		printf("hex p decimal\n");
+		system("Pause");
+		goto selecionar_programa;
+	}
+	
 
 
 
 	{
 	fechar:
-		printf("Obrigado por usar o programa, espero que tenha te ajudado!");
+		printf("Obrigado por usar o programa, espero que tenha te ajudado!\n");
 		Sleep(1000);
 		return 0;
 	}
