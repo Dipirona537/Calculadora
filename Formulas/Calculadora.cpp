@@ -3,9 +3,15 @@
 #include <locale.h>
 #include <math.h>
 #include <conio.h>
+#include <string.h>
+#include <string>
+#include <bitset>
+#include <shlwapi.h>
+
 
 int main(int)
 {
+
 	setlocale(LC_ALL, "Portuguese");
 	{
 	selecionar_programa:
@@ -285,16 +291,40 @@ int main(int)
 		case 3:
 			goto hex_decimal;
 		}
-	{
-	decimal_binario:
-		printf("decimal p binario\n");
+		{
+		decimal_binario: 
+			{
+			int decimal = 0;
+			printf("Decimal para binário\n");
+			printf("Insira o decimal que deseja converter\n");
+			scanf_s("%d", &decimal);
+			printf("Binário (Invertido) = ");
+			int resto = 0, divisao = decimal / 2;
+			char binario[] = "";
+			while (divisao != 0) {
+				resto = decimal % 2;
+				divisao = decimal / 2;
+				decimal = divisao;
+				printf(resto == 0 ? "0" : "1");
+			}
+			}
+			printf("\n");
+		
+
+
+
+		
+		}
+		
+
+
+
 		system("Pause");
 		goto selecionar_programa;
 	}
 
 
 
-	}
 	{
 	binario_decimal:
 		printf("binario p decimal\n");
@@ -323,6 +353,7 @@ int main(int)
 			printf("Pessoas que ajudaram a desenvolver esse app\n");
 			Sleep(1000);
 			printf("Dipirona537 - Gabriel Guimarães\n");
+			printf("Hakimen - Jheffão\n");
 			system("Pause");
 			goto selecionar_programa;
 		}
