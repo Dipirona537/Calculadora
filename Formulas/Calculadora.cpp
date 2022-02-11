@@ -206,7 +206,7 @@ int main(int)
 		scanf_s("%lf", &pi);
 		printf("Digite o raio do seu círculo\n");
 		scanf_s("%lf", &raio);
-		area_circulo = (raio * (pow(pi, 2)));
+		area_circulo = (pi * (pow(raio, 2)));
 		perimetro_circulo = (2 * pi) * raio;
 		diametro = (2 * raio);
 		printf("Área = %.4fm^2\n", area_circulo);
