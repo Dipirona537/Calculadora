@@ -2,12 +2,6 @@
 #include <windows.h>
 #include <locale.h>
 #include <math.h>
-#include <conio.h>
-#include <string.h>
-#include <string>
-#include <bitset>
-#include <shlwapi.h>
-
 
 int main(int)
 {
@@ -42,10 +36,15 @@ int main(int)
 			goto trapezio;
 		case 7:
 			goto conversor;
+			goto selecionar_programa;
 		case 99:
 			goto creditos;
 		case 100:
 			goto fechar;
+		default:
+			printf("Confire o que você digitou\n");
+			Sleep(1000);
+			goto selecionar_programa;
 		}
 
 		/*bhaskara*/
