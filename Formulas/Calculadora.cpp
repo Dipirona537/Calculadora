@@ -18,7 +18,7 @@ int main()
 		Sleep(500);
 		printf("-----\n");
 		printf("Escolha o tipo de problema que deseja resolver:\n");
-		printf("1 - Bhaskara\n2 - Área Triângulo\n3 - Área Quadrado\n4 - Área Círculo\n5 - Área Cone\n6 - Área Trapézio\n7 - Conversão Binário e Hex\n8 - Teste número primo\n99 - Créditos\n100 - Sair do programa\n");
+		printf("1 - Bhaskara\n2 - Área Triângulo\n3 - Área Quadrado\n4 - Área Círculo\n5 - Área Cone\n6 - Área Trapézio\n7 - Conversão Binário e Hex\n8 - Teste número primo\n9 - Calculadora seno, cosseno e tangente\n99 - Créditos\n100 - Sair do programa\n");
 		printf("-----\n");
 		scanf_s("%d", &escolha);
 		switch (escolha)
@@ -39,6 +39,8 @@ int main()
 			goto conversor;
 		case 8:
 			goto teste_primo;
+		case 9:
+			goto calculadorasenos;
 		case 99:
 			goto creditos;
 		case 100:
@@ -321,13 +323,11 @@ int main()
 					printf("%d", bin_int);
 				}
 			}
-				printf("\n");
 
 
 
 
 
-			}
 
 
 
@@ -351,7 +351,7 @@ int main()
 			system("Pause");
 			goto selecionar_programa;
 		}
-
+	}
 		{
 		teste_primo:
 			int numero, quantidade_divisoes, sobra, divisores = 0;
@@ -371,6 +371,283 @@ int main()
 			goto selecionar_programa;
 
 		}
+
+
+
+		{
+			int calculadoras_senos_selecionar;
+		calculadorasenos:
+			printf("Calculadora de senos, cossenos e tangentes\n");
+			printf("Digite o que deseja fazer\n");
+			printf("1 - Calculadora senos\n2 - Calculadora cossenos\n3 - Calculadora tangentes\n4 - Calculadora senos por tabela\n5 - Voltar\n");
+			scanf_s("%d", &calculadoras_senos_selecionar);
+			switch (calculadoras_senos_selecionar) {
+			case 1:
+				goto seno;
+			case 2:
+				goto cosseno;
+			case 3:
+				goto tan;
+			case 4:
+				goto cos_tan_sen_tabela;
+			case 5:
+				goto selecionar_programa;
+			default:
+				printf("Valor invalido\n");
+				goto calculadorasenos;
+			}
+
+			{
+			seno:
+				{
+					float sen, cateto, hipotenusa;
+					printf("Cálculo seno por cateto e hipotenusa\n");
+					printf("Digite o cateto oposto\n");
+					scanf_s("%f", &cateto);
+					printf("Digite a hipotenusa\n");
+					scanf_s("%f", &hipotenusa);
+					sen = cateto / hipotenusa;
+					printf("Seno = %f\n", sen);
+					system("Pause");
+					goto calculadorasenos;
+				}
+			cosseno:
+				{
+					float cos, cateto, hipotenusa;
+					printf("Cálculo cosseno por cateto e hipotenusa\n");
+					printf("Digite o cateto adjascente\n");
+					scanf_s("%f", &cateto);
+					printf("Digite a hipotenusa\n");
+					scanf_s("%f", &hipotenusa);
+					cos = cateto / hipotenusa;
+					printf("Seno = %f\n", cos);
+					system("Pause");
+					goto calculadorasenos;
+				}
+			tan:
+				{
+					float tan, cateto, cateto_oposto;
+					printf("Cálculo ctangente\n");
+					printf("Digite o cateto adjascente\n");
+					scanf_s("%f", &cateto);
+					printf("Digite o cateto oposto\n");
+					scanf_s("%f", &cateto_oposto);
+					tan = cateto / cateto_oposto;
+					printf("Seno = %f\n", tan);
+					system("Pause");
+					goto calculadorasenos;
+				}
+				{
+				cos_tan_sen_tabela:
+				seno_escolha:
+					double seno_selecionado1, seno_selecionado2, cosselecionado1, cosselecionado2, sen30, sen45, sen60, sen90, cos30, cos45, cos60, cos90, tan30, tan45, tan60, resultado;
+					int seno_selecionado11, seno_selecionado22, seno_escolha;
+					sen30 = 0.5;
+					sen45 = 0.7071;
+					sen60 = 0.8660;
+					sen90 = 1;
+					cos30 = 0.8660;
+					cos45 = 0.7071;
+					cos60 = 0.5;
+					cos90 = 0;
+					tan30 = 0.5774;
+					tan45 = 1;
+					tan60 = 1.7321;
+					seno_selecionado1 = 0;
+					seno_selecionado2 = 0;
+					cosselecionado1 = 0;
+					cosselecionado2 = 0;
+					printf("Calculadora dos senos\n");
+					printf("Escolha o que deseja calcular\n");
+					printf("1 - Seno(a) - Seno(b)\n2 - Seno(a) + Seno(b)\n3 - Voltar\n");
+					scanf_s("%d", &seno_escolha);
+					switch (seno_escolha) {
+					case 1:
+						goto senoamenosb;
+					case 2:
+						goto senoamaisb;
+					case 3:
+						goto selecionar_programa;
+					default:
+						printf("Valor invalido\n");
+						goto seno_escolha;
+					}
+
+					{
+						//sen a-b
+					senoamenosb:
+					seno1:
+						printf("Lista dos senos\n1 - sen 30 = 0.5\n2 - sen 45 = 0.7071\n3 - sen 60 = 0.8660\n4 - sen 90 = 1\n");
+						printf("Digite o seno A\n");
+						scanf_s("%d", &seno_selecionado11);
+						switch (seno_selecionado11) {
+						case 1:
+							seno_selecionado1 = sen30;
+							cosselecionado2 = cos30;
+							printf("---------------\n");
+							printf("Sen30 escolhido\n");
+							printf("---------------\n");
+							break;
+						case 2:
+							seno_selecionado1 = sen45;
+							cosselecionado2 = cos45;
+							printf("---------------\n");
+							printf("Sen45 escolhido\n");
+							printf("---------------\n");
+							break;
+						case 3:
+							seno_selecionado1 = sen60;
+							cosselecionado2 = cos60;
+							printf("---------------\n");
+							printf("Sen60 escolhido\n");
+							printf("---------------\n");
+							break;
+						case 4:
+							seno_selecionado1 = sen90;
+							cosselecionado2 = cos90;
+							printf("---------------\n");
+							printf("Sen90 escolhido\n");
+							printf("---------------\n");
+							break;
+						default:
+							printf("Escolha um valor correto\n");
+							goto seno1;
+						}
+					seno2:
+						printf("Lista dos senos\n1 - sen 30 = 0.5\n2 - sen 45 = 0.7071\n3 - sen 60 = 0.8660\n4 - sen 90 = 1\n");
+						printf("Digite o seno B\n");
+						scanf_s("%d", &seno_selecionado22);
+						switch (seno_selecionado22) {
+						case 1:
+							seno_selecionado2 = sen30;
+							cosselecionado1 = cos30;
+							printf("---------------\n");
+							printf("Sen30 escolhido\n");
+							printf("---------------\n");
+							break;
+						case 2:
+							seno_selecionado2 = sen45;
+							cosselecionado1 = cos45;
+							printf("---------------\n");
+							printf("Sen45 escolhido\n");
+							printf("---------------\n");
+							break;
+						case 3:
+							seno_selecionado2 = sen60;
+							cosselecionado1 = cos60;
+							printf("---------------\n");
+							printf("Sen60 escolhido\n");
+							printf("---------------\n");
+							break;
+						case 4:
+							seno_selecionado2 = sen90;
+							cosselecionado1 = cos90;
+							printf("---------------\n");
+							printf("Sen90 escolhido\n");
+							printf("---------------\n");
+							break;
+						default:
+							printf("Selecione um valor correto\n");
+							goto seno2;
+						}
+						resultado = (seno_selecionado1 * cosselecionado1) - (seno_selecionado2 * cosselecionado2);
+						printf("Sen(%lf) - Sen(%lf) = %f\n", seno_selecionado1, seno_selecionado2, resultado);
+						system("Pause");
+						goto seno_escolha;
+					}
+					{
+						//sen a+b
+					senoamaisb:
+					seno11:
+						printf("Lista dos senos\n1 - sen 30 = 0.5\n2 - sen 45 = 0.7071\n3 - sen 60 = 0.8660\n4 - sen 90 = 1\n");
+						printf("Digite o seno A\n");
+						scanf_s("%d", &seno_selecionado11);
+						switch (seno_selecionado11) {
+						case 1:
+							seno_selecionado1 = sen30;
+							cosselecionado2 = cos30;
+							printf("---------------\n");
+							printf("Sen30 escolhido\n");
+							printf("---------------\n");
+							break;
+						case 2:
+							seno_selecionado1 = sen45;
+							cosselecionado2 = cos45;
+							printf("---------------\n");
+							printf("Sen45 escolhido\n");
+							printf("---------------\n");
+							break;
+						case 3:
+							seno_selecionado1 = sen60;
+							cosselecionado2 = cos60;
+							printf("---------------\n");
+							printf("Sen60 escolhido\n");
+							printf("---------------\n");
+							break;
+						case 4:
+							seno_selecionado1 = sen90;
+							cosselecionado2 = cos90;
+							printf("---------------\n");
+							printf("Sen90 escolhido\n");
+							printf("---------------\n");
+							break;
+						default:
+							printf("Escolha um valor correto\n");
+							goto seno11;
+						}
+					seno22:
+						printf("Lista dos senos\n1 - sen 30 = 0.5\n2 - sen 45 = 0.7071\n3 - sen 60 = 0.8660\n4 - sen 90 = 1\n");
+						printf("Digite o seno B\n");
+						scanf_s("%d", &seno_selecionado22);
+						switch (seno_selecionado22) {
+						case 1:
+							seno_selecionado2 = sen30;
+							cosselecionado1 = cos30;
+							printf("---------------\n");
+							printf("Sen30 escolhido\n");
+							printf("---------------\n");
+							break;
+						case 2:
+							seno_selecionado2 = sen45;
+							cosselecionado1 = cos45;
+							printf("---------------\n");
+							printf("Sen45 escolhido\n");
+							printf("---------------\n");
+							break;
+						case 3:
+							seno_selecionado2 = sen60;
+							cosselecionado1 = cos60;
+							printf("---------------\n");
+							printf("Sen60 escolhido\n");
+							printf("---------------\n");
+							break;
+						case 4:
+							seno_selecionado2 = sen90;
+							cosselecionado1 = cos90;
+							printf("---------------\n");
+							printf("Sen90 escolhido\n");
+							printf("---------------\n");
+							break;
+						default:
+							printf("Selecione um valor correto\n");
+							goto seno22;
+						}
+						resultado = (seno_selecionado1 * cosselecionado1) + (seno_selecionado2 * cosselecionado2);
+						printf("Sen(%lf) - Sen(%lf) = %f\n", seno_selecionado1, seno_selecionado2, resultado);
+						system("Pause");
+						goto seno_escolha;
+					}
+				}
+			}
+		}
+
+
+
+
+
+
+
+
 
 		{
 		fechar:
