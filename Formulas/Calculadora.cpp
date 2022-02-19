@@ -648,7 +648,7 @@ int main()
 
 
 
-
+		//asd
 		{
 		fechar:
 			printf("Obrigado por usar o programa, espero que tenha te ajudado!\n");
