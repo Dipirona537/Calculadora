@@ -633,7 +633,7 @@ int main()
 							goto seno22;
 						}
 						resultado = (seno_selecionado1 * cosselecionado1) + (seno_selecionado2 * cosselecionado2);
-						printf("Sen(%lf) - Sen(%lf) = %f\n", seno_selecionado1, seno_selecionado2, resultado);
+						printf("Sen(%lf) + Sen(%lf) = %f\n", seno_selecionado1, seno_selecionado2, resultado);
 						system("Pause");
 						goto seno_escolha;
 					}
