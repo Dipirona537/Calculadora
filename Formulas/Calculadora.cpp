@@ -310,16 +310,17 @@ int main()
 					printf("Decimal para binário\n");
 					printf("Insira o decimal que deseja converter\n");
 					scanf_s("%d", &decimal);
-					printf("Binário (Invertido) = ");
-					int resto = 0, divisao = decimal / 2;
-					char binario[] = "";
-					while (divisao != 0) {
+					int resto = 0, bin_int = 0, binario = 1;
+					printf("Binário = ");
+					while (decimal != 0) {
 						resto = decimal % 2;
-						divisao = decimal / 2;
-						decimal = divisao;
-						printf(resto == 0 ? "0" : "1");
+						bin_int = (resto * binario) + bin_int;
+						decimal = decimal / 2;
+						binario = binario * 10;
 					}
+					printf("%d", bin_int);
 				}
+			}
 				printf("\n");
 
 
@@ -389,5 +390,4 @@ int main()
 				goto selecionar_programa;
 			}
 		}
-	}
 }
